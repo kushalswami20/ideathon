@@ -1,0 +1,234 @@
+/* Contact page specific styles */
+.contact-page {
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  /* Header Section */
+  .contact-header {
+    background-color: #2196F3;
+    color: white;
+    padding: 4rem 1rem;
+    position: relative;
+  }
+  
+  .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .page-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+  
+  .page-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: white;
+  }
+  
+  /* Contact Grid Layout */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Contact Information Section */
+  .contact-info {
+    color: white;
+  }
+  
+  .section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+  
+  .contact-person {
+    margin-bottom: 2rem;
+  }
+  
+  .contact-role {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .person-name {
+    font-size: 1.25rem;
+    margin: 0.5rem 0;
+  }
+  
+  .contact-details {
+    opacity: 0.9;
+    line-height: 1.6;
+  }
+  
+  /* Contact Form Section */
+  .contact-form {
+    color: white;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-input,
+  .form-textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: white;
+    color: #333;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-input:focus,
+  .form-textarea:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .form-textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+  
+  .submit-button {
+    background-color: white;
+    color: #2196F3;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  
+  /* FAQ Section */
+  .faq-section {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 20px;
+  }
+  
+  .faq-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #333;
+  }
+  
+  .faq-container {
+    max-width: 800px;
+  }
+  
+  .faq-item {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+  }
+  
+  .faq-question {
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    background-color: #f5f5f5;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .faq-question:hover {
+    background-color: #eeeeee;
+  }
+  
+  .faq-question.active {
+    background-color: #e3f2fd;
+  }
+  
+  .question-text {
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .faq-answer {
+    padding: 1rem;
+    background-color: white;
+    line-height: 1.6;
+  }
+  
+  .faq-answer ol {
+    padding-left: 1.5rem;
+  }
+  
+  .faq-answer li {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+  
+    .page-title {
+        font-size: 2rem;
+    }
+  
+    .contact-header {
+        padding: 3rem 1rem;
+    }
+  
+    .faq-title {
+        font-size: 1.75rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .page-title {
+        font-size: 1.75rem;
+    }
+  
+    .section-title {
+        font-size: 1.1rem;
+    }
+  
+    .person-name {
+        font-size: 1.1rem;
+    }
+  
+    .submit-button {
+        width: 100%;
+    }
+  }

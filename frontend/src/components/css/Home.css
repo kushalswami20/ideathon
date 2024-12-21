@@ -1,0 +1,200 @@
+body{
+    margin: 0;
+    padding: 0;
+  }
+  
+  .poster-image {
+    width: 90%;
+    height: auto;
+    display: block;
+    margin: 60px auto;
+    object-fit: cover;
+    border: 1px solid black;
+    border-radius: 2%;
+  }
+  
+  :root {
+    --yellow-bg: #fff8e6;  /* Light yellow background */
+    --yellow-card: #fffdf7; /* Even lighter yellow for cards */
+    --yellow-accent: #ffd700; /* Accent color */
+    --text-dark: #2d2d2d;
+  }
+  
+  /* Common Styles */
+  .container {
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--text-dark);
+  }
+  
+  /* Ideathon Section */
+  .ideathon-section {
+    /* padding: 4rem 0; */
+    padding-top: 4rem ;
+    background-color: var(--yellow-bg);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Optional: Add subtle pattern overlay */
+  .ideathon-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(var(--yellow-accent) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.1;
+  }
+  
+  .ideathon-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    position: relative;
+  }
+  
+  .ideathon-info h3 {
+    font-size: 1.5rem;
+    color: #b8860b;  /* Darker yellow for headings */
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  
+  .ideathon-info p {
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+  
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .stat-card {
+    background: var(--yellow-card);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(218, 165, 32, 0.1);
+    border: 1px solid rgba(218, 165, 32, 0.1);
+  }
+  
+  .stat-card h4 {
+    color: #b8860b;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .feature-card {
+    background: var(--yellow-card);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(218, 165, 32, 0.1);
+    border: 1px solid rgba(218, 165, 32, 0.1);
+    transition: transform 0.2s ease;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-3px);
+  }
+  
+  .feature-card h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #b8860b;
+  }
+  
+  .feature-card p {
+    color: var(--text-dark);
+  }
+  
+  /* Sponsors Section */
+  .sponsors-section {
+    padding: 4rem 0;
+    background-color: var(--yellow-bg);;
+    /* margin: 4rem 0; */
+  }
+  
+  .sponsors-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  
+  .sponsor-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(218, 165, 32, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    transition: transform 0.2s ease;
+    border: 1px solid rgba(218, 165, 32, 0.1);
+  }
+  
+  .sponsor-card:hover {
+    transform: translateY(-3px);
+  }
+  
+  .sponsor-card img {
+    max-height: 60px;
+    width: auto;
+    object-fit: contain;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .ideathon-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .sponsors-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .ideathon-info h3 {
+        font-size: 1.3rem;
+    }
+    
+    .stat-card h4 {
+        font-size: 1.3rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .sponsors-grid {
+        grid-template-columns: 1fr;
+    }
+  }

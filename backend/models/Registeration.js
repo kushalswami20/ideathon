@@ -41,7 +41,7 @@ const registerSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    Major:{
+    Degree:{
         type:String,
         required: true
     },

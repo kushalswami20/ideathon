@@ -2,9 +2,9 @@ import {Register} from "../models/Registeration.js"
 
 export const register = async(req,res) =>{
     try{
-        const {firstName, lastName, email, phone, address, city , state, zipCode,collegeName, collegeCity, Major, yearOfStudy, dateOfBirth, gender}= req.body;
+        const {firstName, lastName, email, phone, address, city , state, zipCode,collegeName, collegeCity, Degree, yearOfStudy, dateOfBirth, gender}= req.body;
 
-        if(!firstName || !lastName || !email || !phone|| !address || !city || !state || !zipCode || !collegeName || !collegeCity || !Major || !yearOfStudy || !dateOfBirth || !gender){
+        if(!firstName || !lastName || !email || !phone|| !address || !city || !state || !zipCode || !collegeName || !collegeCity || !Degree || !yearOfStudy || !dateOfBirth || !gender){
             return res.status(400).json({
                 message: "something missing",
                 success: true
@@ -21,13 +21,13 @@ export const register = async(req,res) =>{
             zipCode,
             collegeName, 
             collegeCity, 
-            Major, 
+            Degree, 
             yearOfStudy, 
             dateOfBirth, 
             gender
         });
         return res.status(201).json({
-            message: "Account created successfully.",
+            message: "Registered successfully.",
             success: true
         });
     }

@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import './css/Registration.css';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-hot-toast';
+import axios from 'axios';
 
 const RegistrationForm = () => {
     const [formData, setFormData] = useState({
@@ -13,12 +16,14 @@ const RegistrationForm = () => {
         zipCode: '',
         collegeName: '',
         collegeCity: '',
-        Major:'',
+        Degree:'',
         yearOfStudy: '',
         dateOfBirth: '',
         gender: '',
         
     });
+    const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -29,10 +34,39 @@ const RegistrationForm = () => {
     };
 
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
-        // Add your form submission logic here
+        
+        // Log the data being sent
+        console.log('Sending form data:', formData);
+        
+        try {
+            setLoading(true);
+            const response = await axios.post('http://localhost:5001/user/register', formData, {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                withCredentials: true
+            });
+            
+            console.log('Response:', response.data);
+            
+            if (response.data.success) {
+                toast.success('Registration successful!');
+                navigate("/");
+            }
+        } catch (error) {
+            // More detailed error logging
+            console.error('Error details:', {
+                message: error.response?.data?.message,
+                status: error.response?.status,
+                data: error.response?.data
+            });
+            
+            toast.error(error.response?.data?.message || 'Registration failed');
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -149,11 +183,11 @@ const RegistrationForm = () => {
                 </div>
 
                 <div className="form-group">
-                    <label>Major:</label>
+                    <label>Degree:</label>
                     <input
                         type="text"
-                        name="major"
-                        value={formData.major}
+                        name="Degree"
+                        value={formData.Degree}
                         onChange={handleChange}
                         required
                     />

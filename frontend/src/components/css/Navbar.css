@@ -1,6 +1,6 @@
 .navbar {
   font-family: "Helvetica Neue", Helvetica, sans-serif;
-  background-color: #c51d2e;
+  background-color: #1b5e20;
   padding: 1rem 0;
   display: flex;
   flex-wrap: wrap;
@@ -12,13 +12,20 @@
 
 .nav-logo {
   padding: 0 1rem;
+  display: flex;
+  align-items: center;
 }
 
 .logo {
   display: block;
-  max-height: 50px;
-  width: auto;
+  height: 60px;  /* Increased fixed height */
+  width: 60px;   /* Equal width for perfect circle */
+  border-radius: 50%;  /* Makes the logo round */
+  object-fit: cover;  /* Ensures the image fills the circular space */
+  border: 2px solid #fff;  /* Optional: adds a white border around the logo */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Optional: adds subtle shadow */
 }
+
 
 .skew-menu {
   text-align: center;
@@ -53,7 +60,7 @@
 }
 
 .skew-menu ul li:hover {
-  background: #fee103;
+  background: #66bb6a;
 }
 
 .skew-menu ul li a {
@@ -70,7 +77,7 @@
 
 .skew-menu ul li a.active {
   color: #c51d2e;
-  background: #fee103;
+  background: #66bb6a;
   transform: skew(0deg);
 }
 
@@ -82,7 +89,12 @@
   }
 
   .nav-logo {
-    margin-bottom: 1rem;
+    margin: 0.5rem 0;  /* Adjusted margin for better spacing */
+  }
+  
+  .logo {
+    height: 50px;  /* Slightly smaller on mobile */
+    width: 50px;
   }
 
   .skew-menu ul {

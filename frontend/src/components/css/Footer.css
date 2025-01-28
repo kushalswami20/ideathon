@@ -1,13 +1,18 @@
+/* Main Footer Styles */
 .footer {
-    background: linear-gradient(135deg, #a61724 0%, #c51d2e 50%, #e63240 100%);
+    background: linear-gradient(135deg, #1b5e20 0%, #388e3c 50%, #66bb6a 100%);
     color: #ffffff;
     padding: 60px 20px 40px;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     position: relative;
     overflow: hidden;
+    background-size: 200% 200%;
+    animation: gradientMove 15s ease infinite;
+    margin-top: auto;
+    min-height: 300px;
 }
 
-/* Add a subtle overlay pattern */
+/* Overlay Pattern */
 .footer::before {
     content: '';
     position: absolute;
@@ -20,16 +25,22 @@
     pointer-events: none;
 }
 
+/* Footer Content Layout */
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 50px;
     position: relative;
     z-index: 1;
 }
 
+.footer-content.two-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(250px, 300px));
+    justify-content: center;
+    gap: 200px;
+}
+
+/* Section Styles */
 .footer-section {
     display: flex;
     flex-direction: column;
@@ -55,10 +66,17 @@
     border-radius: 2px;
 }
 
+/* Quick Links List */
 .footer-section ul {
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+.two-column-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px 20px;
 }
 
 .footer-section ul li {
@@ -94,6 +112,7 @@
     width: 100%;
 }
 
+/* Social Links */
 .social-links {
     display: flex;
     gap: 20px;
@@ -118,8 +137,10 @@
     background: #64ffda;
     color: #1e3c72;
     transform: translateY(-3px);
+    animation: pulse 1s infinite;
 }
 
+/* Contact Info */
 .contact-info {
     color: rgba(255, 255, 255, 0.8);
     line-height: 1.8;
@@ -130,8 +151,20 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    transition: transform 0.3s ease;
 }
 
+.contact-info p:hover {
+    transform: translateY(-2px);
+    color: #ffffff;
+}
+
+.contact-info p span {
+    margin-left: 8px; /* Add space between icon and text */
+}
+
+
+/* Bottom Bar */
 .bottom-bar {
     margin-top: 50px;
     padding-top: 20px;
@@ -143,9 +176,8 @@
 
 /* Responsive Design */
 @media (max-width: 900px) {
-    .footer-content {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
+    .footer-content.two-columns {
+        gap: 150px;
     }
 }
 
@@ -154,9 +186,9 @@
         padding: 40px 20px 30px;
     }
 
-    .footer-content {
+    .footer-content.two-columns {
         grid-template-columns: 1fr;
-        gap: 35px;
+        gap: 40px;
     }
     
     .footer-section {
@@ -166,6 +198,11 @@
     .footer-section h3::after {
         left: 50%;
         transform: translateX(-50%);
+    }
+    
+    .two-column-list {
+        grid-template-columns: 1fr;
+        gap: 12px;
     }
     
     .social-links {
@@ -182,5 +219,29 @@
     
     .footer-section ul li a:hover {
         transform: translateX(0) translateY(-2px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(100, 255, 218, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(100, 255, 218, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(100, 255, 218, 0);
+    }
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
     }
 }

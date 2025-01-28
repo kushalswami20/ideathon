@@ -10,6 +10,7 @@ import Home from './components/Home'
 import Contact from './components/Contact'
 import Resources from './components/Resources'
 import Team from './components/Team'
+import Gallery from './components/Gallery'
 
 import Registration from './components/Registration'
 
@@ -25,6 +26,7 @@ function App() {
       <Route path="/Registration" element= {<Registration />} />
       <Route path="/contact" element= {<Contact />} />
       <Route path="/resources" element= {<Resources />} />
+      <Route path="/gallery" element= {<Gallery />} />
       <Route path="/team" element= {<Team />} />
 
       </Routes>

@@ -1,3 +1,26 @@
+
+:root {
+  /* Primary greens */
+  --primary-color: #2e7d32;      /* Medium forest green */
+  --primary-dark: #1b5e20;       /* Dark forest green */
+  --primary-light: #4caf50;      
+  
+  /* Secondary greens */
+  --secondary-color: #81c784;    /* Soft mint green */
+  --secondary-dark: #388e3c;     /* Deep green */
+  
+  /* Text colors */
+  --text-dark: #1c2120;          /* Very dark green-gray */
+  --text-light: #ffffff;         /* White */
+  
+  /* Background colors */
+  --background-light: #f1f8e9;   /* Very light mint green */
+  --card-background: #ffffff;    /* White */
+  --yellow-bg: #fff8e6;  /* Light yellow background */
+  --yellow-card: #fffdf7; /* Even lighter yellow for cards */
+  --yellow-accent: #ffd700; /* Accent color */
+  --text-dark: #2d2d2d;
+}
 body{
     margin: 0;
     padding: 0;
@@ -12,13 +35,19 @@ body{
     border: 1px solid black;
     border-radius: 2%;
   }
-  
-  :root {
-    --yellow-bg: #fff8e6;  /* Light yellow background */
-    --yellow-card: #fffdf7; /* Even lighter yellow for cards */
-    --yellow-accent: #ffd700; /* Accent color */
-    --text-dark: #2d2d2d;
-  }
+  /* Add decorative dividers between sections */
+.virina-section::after,
+.ideathon-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--yellow-accent), transparent);
+}
+ 
   
   /* Common Styles */
   .container {
@@ -27,14 +56,110 @@ body{
     padding: 0 20px;
   }
   
-  .section-title {
+  .section-title-ideathon{
     font-size: 2.5rem;
     font-weight: bold;
     text-align: center;
     margin-bottom: 3rem;
     color: var(--text-dark);
   }
+
+
+/* About Section Styles */
+.about-section {
+  /* padding: 4rem 0; */
+  background-color: var(--yellow-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(var(--yellow-accent) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.1;
+}
+
+.about-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.about-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+}
+
+.about-section p {
+  color: var(--text-dark);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+.about-section .flex {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-section .flex > div {
+  flex: 1;
+}
+
+/* Image styling */
+.about-section .aspect-square {
+  position: relative;
+  padding-top: 100%;
+}
+
+.about-section .aspect-square img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 75%;
+  height: 75%;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(218, 165, 32, 0.1);
+  border: 1px solid rgba(218, 165, 32, 0.1);
+}
   
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-section .flex {
+      flex-direction: column;
+  }
+
+  .about-section .flex > div {
+      width: 100%;
+  }
+
+  .about-section h2 {
+      font-size: 2rem;
+      text-align: center;
+  }
+
+  .about-section .aspect-square {
+      padding-top: 75%; /* Adjust aspect ratio for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+      padding: 2rem 0;
+  }
+
+  .about-section h2 {
+      font-size: 1.8rem;
+  }
+}
   /* Ideathon Section */
   .ideathon-section {
     /* padding: 4rem 0; */

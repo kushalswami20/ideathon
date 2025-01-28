@@ -147,7 +147,7 @@
 }
 
 .submit-btn:hover {
-    background: linear-gradient(135deg, #c51d2e 0%, #c51d2e 100%);
+    background: linear-gradient(135deg, #1b5e20 0%, #388e3c 50%, #66bb6a 100%);
     box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
     transform: translateY(-2px);
 }
@@ -159,7 +159,7 @@
 /* Error State Styles */
 .form-group input:invalid,
 .form-group select:invalid {
-    border-color: #e74c3c;
+    border-color: #66bb6a;
 }
 
 /* Placeholder Styles */

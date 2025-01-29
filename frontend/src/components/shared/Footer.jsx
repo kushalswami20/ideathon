@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone } from 'lucide-react';
-import '../css/Footer.css'
+import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, Leaf } from 'lucide-react';
+import "../css/Footer.css"
 
 const Footer = () => {
     const location = useLocation();
     
-    const handleLinkClick = (e) => {
+    const handleLinkClick = () => {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
@@ -17,12 +17,15 @@ const Footer = () => {
         <footer className="footer">
             <div className="footer-content two-columns">
                 <div className="footer-section">
-                    <h3>Quick Links</h3>
+                    <h3>
+                        <Leaf className="inline-block mr-2 text-emerald-300" size={20} />
+                        Quick Links
+                    </h3>
                     <ul className="two-column-list">
                         <li><Link to="/" onClick={handleLinkClick}>Home</Link></li>
-                        <li><Link to="/registration" onClick={handleLinkClick}>Registration</Link></li>
+                        <li><Link to="/registration" onClick={handleLinkClick}>Join Us</Link></li>
                         <li><Link to="/resources" onClick={handleLinkClick}>Resources</Link></li>
-                        <li><Link to="/team" onClick={handleLinkClick}>Team</Link></li>
+                        <li><Link to="/team" onClick={handleLinkClick}>Our Team</Link></li>
                         <li><Link to="/gallery" onClick={handleLinkClick}>Gallery</Link></li>
                         <li><Link to="/contact" onClick={handleLinkClick}>Contact</Link></li>
                     </ul>
@@ -31,25 +34,45 @@ const Footer = () => {
                 <div className="footer-section">
                     <h3>Connect With Us</h3>
                     <div className="social-links">
-                        <a href="#" aria-label="Facebook" onClick={(e) => e.preventDefault()}>
+                        <a 
+                            href="#" 
+                            aria-label="Facebook" 
+                            onClick={(e) => e.preventDefault()}
+                            className="social-link"
+                        >
                             <Facebook size={20} />
                         </a>
-                        <a href="#" aria-label="Twitter" onClick={(e) => e.preventDefault()}>
+                        <a 
+                            href="#" 
+                            aria-label="Twitter" 
+                            onClick={(e) => e.preventDefault()}
+                            className="social-link"
+                        >
                             <Twitter size={20} />
                         </a>
-                        <a href="#" aria-label="LinkedIn" onClick={(e) => e.preventDefault()}>
+                        <a 
+                            href="#" 
+                            aria-label="LinkedIn" 
+                            onClick={(e) => e.preventDefault()}
+                            className="social-link"
+                        >
                             <Linkedin size={20} />
                         </a>
-                        <a href="#" aria-label="Instagram" onClick={(e) => e.preventDefault()}>
+                        <a 
+                            href="#" 
+                            aria-label="Instagram" 
+                            onClick={(e) => e.preventDefault()}
+                            className="social-link"
+                        >
                             <Instagram size={20} />
                         </a>
                     </div>
                     <div className="contact-info">
-                        <p>
+                        <p className="hover:text-emerald-300">
                             <Mail size={16} />
-                            <span>contact@example.com</span>
+                            <span>contact@ecosociety.org</span>
                         </p>
-                        <p>
+                        <p className="hover:text-emerald-300">
                             <Phone size={16} />
                             <span>(555) 123-4567</span>
                         </p>
@@ -58,7 +81,8 @@ const Footer = () => {
             </div>
 
             <div className="bottom-bar">
-                <p>&copy; {new Date().getFullYear()} Your Company. All rights reserved.</p>
+                <p>Making a greener future together</p>
+                <p>&copy; {new Date().getFullYear()} Paryavarnam Society. All rights reserved.</p>
             </div>
         </footer>
     );

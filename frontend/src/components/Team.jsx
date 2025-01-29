@@ -38,11 +38,11 @@ const Team = () => {
     return (
         <div className="team-page">
             <header className="team-header">
-                <div className="team-header-background"></div>
+                <div className="team-header-overlay"></div>
                 <div className="team-header-content">
-                    <h1>Organizing Committee</h1>
-                    <p className="team-subtitle">
-                        Meet our dedicated team of professionals working together to make this Ideathon a success
+                    <h1 className='team-header-title'>Team</h1>
+                    <p className="team-header-description">
+                        Meet our dedicated team of professionals working together to make this society a success
                     </p>
                 </div>
             </header>

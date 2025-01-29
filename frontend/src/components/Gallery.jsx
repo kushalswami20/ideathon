@@ -1,109 +1,166 @@
 import React, { useState } from 'react';
-import { X } from 'lucide-react';
+import { Search, Calendar, MapPin, Users } from 'lucide-react';
 import './css/Gallery.css';
 
+const eventTypes = [
+  { id: 'all', label: 'All Events' },
+  { id: 'health', label: 'Health Camps' },
+  { id: 'workshop', label: 'Workshops' },
+  { id: 'awareness', label: 'Awareness Drives' },
+  { id: 'community', label: 'Community Events' }
+];
+
+const events = [
+  {
+    id: 1,
+    title: "Women's Health Workshop",
+    type: "health",
+    date: "March 15, 2024",
+    location: "City Hospital",
+    attendees: 150,
+    imageUrl: "/api/placeholder/400/300",
+    description: "A comprehensive workshop focusing on women's health and wellness."
+  },
+  {
+    id: 2,
+    title: "Cancer Awareness Drive",
+    type: "awareness",
+    date: "March 20, 2024",
+    location: "Community Center",
+    attendees: 200,
+    imageUrl: "/api/placeholder/400/300",
+    description: "Raising awareness about cancer prevention and early detection."
+  },
+  {
+    id: 3,
+    title: "Community Health Fair",
+    type: "community",
+    date: "April 5, 2024",
+    location: "Central Park",
+    attendees: 300,
+    imageUrl: "/api/placeholder/400/300",
+    description: "Annual health fair bringing healthcare services to the community."
+  },
+  {
+    id: 4,
+    title: "Mental Health Workshop",
+    type: "workshop",
+    date: "April 15, 2024",
+    location: "Mind & Wellness Center",
+    attendees: 100,
+    imageUrl: "/api/placeholder/400/300",
+    description: "Interactive session on mental health awareness and well-being."
+  }
+];
+
+const EventCard = ({ event, eventTypes }) => (
+  <div className="event-card">
+    <img
+      src={event.imageUrl}
+      alt={event.title}
+      className="event-image"
+    />
+    <div className="event-content">
+      <h3 className="event-title">{event.title}</h3>
+      <div className="event-details">
+        <div className="detail-row">
+          <Calendar size={16} />
+          <span>{event.date}</span>
+        </div>
+        <div className="detail-row">
+          <MapPin size={16} />
+          <span>{event.location}</span>
+        </div>
+        <div className="detail-row">
+          <Users size={16} />
+          <span>{event.attendees} Attendees</span>
+        </div>
+      </div>
+      <p className="event-description">{event.description}</p>
+      <div>
+        <span className={`event-tag tag-${event.type}`}>
+          {eventTypes.find(t => t.id === event.type)?.label}
+        </span>
+      </div>
+    </div>
+  </div>
+);
+
+const FilterButtons = ({ activeFilter, setActiveFilter, eventTypes }) => (
+  <div className="filter-buttons">
+    {eventTypes.map(type => (
+      <button
+        key={type.id}
+        onClick={() => setActiveFilter(type.id)}
+        className={`filter-button ${activeFilter === type.id ? 'active' : ''}`}
+      >
+        {type.label}
+      </button>
+    ))}
+  </div>
+);
+
+const SearchBar = ({ searchTerm, setSearchTerm }) => (
+  <div className="search-container">
+    <input
+      type="text"
+      placeholder="Search events..."
+      className="search-input"
+      value={searchTerm}
+      onChange={(e) => setSearchTerm(e.target.value)}
+    />
+    <Search className="search-icon" size={20} />
+  </div>
+);
+
 const Gallery = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [activeFilter, setActiveFilter] = useState('all');
+  const [searchTerm, setSearchTerm] = useState('');
 
-  const galleryItems = [
-    {
-      id: 1,
-      title: "Event Title 1",
-      description: "Description of the first event or image",
-      imageUrl: "src/assets/bgimg.jpeg",
-      date: "March 15, 2024"
-    },
-    {
-      id: 2,
-      title: "Event Title 2",
-      description: "Description of the second event or image",
-      imageUrl: "src/assets/bgimg.jpeg",
-      date: "March 16, 2024"
-    },
-    {
-      id: 3,
-      title: "Event Title 3",
-      description: "Description of the third event or image",
-      imageUrl: "src/assets/bgimg.jpeg",
-      date: "March 17, 2024"
-    },
-    {
-      id: 4,
-      title: "Event Title 4",
-      description: "Description of the fourth event or image",
-      imageUrl: "src/assets/bgimg.jpeg",
-      date: "March 18, 2024"
-    },
-    {
-      id: 5,
-      title: "Event Title 5",
-      description: "Description of the fifth event or image",
-      imageUrl: "src/assets/bgimg.jpeg",
-      date: "March 19, 2024"
-    },
-    {
-      id: 6,
-      title: "Event Title 6",
-      description: "Description of the sixth event or image",
-      imageUrl: "src/assets/bgimg.jpeg",
-      date: "March 20, 2024"
-    }
-  ];
-
-  const openModal = (image) => {
-    setSelectedImage(image);
-    document.body.style.overflow = 'hidden';
-  };
-
-  const closeModal = () => {
-    setSelectedImage(null);
-    document.body.style.overflow = 'unset';
-  };
+  const filteredEvents = events.filter(event => {
+    const matchesFilter = activeFilter === 'all' || event.type === activeFilter;
+    const matchesSearch = event.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         event.description.toLowerCase().includes(searchTerm.toLowerCase());
+    return matchesFilter && matchesSearch;
+  });
 
   return (
-    <div className="gallery-page">
-      <header className="header header-with-bg">
-        {/* Parallax background for header */}
-        <div className="header-background"></div>
-        <div className="header-content">
-          <h1>Our Gallery</h1>
-          <p className="subtitle">Explore our collection of memorable moments and inspiring events</p>
+    <div className="gallery-container">
+      {/* Header */}
+      <header className="gallery-header">
+        <div className="gallery-header-overlay" />
+        <div className="gallery-header-content">
+          <h1 className="gallery-title">Event Gallery</h1>
+          <p className="gallery-description">
+            Explore our collection of events and initiatives making a difference in the community
+          </p>
         </div>
       </header>
 
-      <div className="gallery-container">
-        <div className="gallery-grid">
-          {galleryItems.map((item) => (
-            <div 
-              key={item.id} 
-              className="gallery-item"
-              onClick={() => openModal(item)}
-            >
-              <img src={item.imageUrl} alt={item.title} />
-              <div className="gallery-item-overlay">
-                <h3>{item.title}</h3>
-                <p>{item.date}</p>
-              </div>
-            </div>
+      {/* Filters Section */}
+      <section className="filters-container">
+        <div className="filters-wrapper">
+          <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+          <FilterButtons 
+            activeFilter={activeFilter} 
+            setActiveFilter={setActiveFilter} 
+            eventTypes={eventTypes} 
+          />
+        </div>
+      </section>
+
+      {/* Gallery Grid */}
+      <main className="gallery-grid">
+        <div className="events-grid">
+          {filteredEvents.map(event => (
+            <EventCard 
+              key={event.id} 
+              event={event} 
+              eventTypes={eventTypes} 
+            />
           ))}
         </div>
-
-        {selectedImage && (
-          <div className="modal" onClick={closeModal}>
-            <div className="modal-content" onClick={e => e.stopPropagation()}>
-              <button className="close-button" onClick={closeModal}>
-                <X size={24} />
-              </button>
-              <img src={selectedImage.imageUrl} alt={selectedImage.title} />
-              <div className="modal-info">
-                <h2>{selectedImage.title}</h2>
-                <p className="modal-date">{selectedImage.date}</p>
-                <p className="modal-description">{selectedImage.description}</p>
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
+      </main>
     </div>
   );
 };

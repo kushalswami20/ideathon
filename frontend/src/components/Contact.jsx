@@ -1,147 +1,141 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, User } from 'lucide-react';
+import { Send, Mail, Phone, Clock } from 'lucide-react';
 import './css/Contact.css';
 
-const Contact = () => {
-    const [activeQuestion, setActiveQuestion] = useState('submit');
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        message: ''
+const ContactPage = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate form submission
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    // Reset form
+    setFormData({
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
     });
+    setIsSubmitting(false);
+    alert('Message sent successfully!');
+  };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Handle form submission
-        console.log(formData);
-    };
-
-    const faqData = [
-        {
-            id: 'submit',
-            question: 'How To Submit Your Idea?',
-            answer: (
-                <>
-                    <p>To submit your idea for the competition, please follow these steps:</p>
-                    <ol>
-                        <li>
-                            <strong>Complete the Submission Form:</strong> Navigate to the Idea Submission Page. Fill out the submission form with the necessary information about your idea. This includes the basic details about your idea that how impactful it is.
-                        </li>
-                        <li>
-                            <strong>Review and Submit:</strong> Double-check all the details you have entered to ensure accuracy. Once you are satisfied, click the "Submit" button to submit your idea.
-                        </li>
-                    </ol>
-                </>
-            )
-        },
-        {
-            id: 'register',
-            question: 'How to Register Your School?',
-            answer: 'Registration process information...'
-        },
-        {
-            id: 'award',
-            question: 'How to Apply for the Principle of Innovation Award?',
-            answer: 'Award application process information...'
-        }
-    ];
-
-    return (
-        <div className="contact-page">
-            <header className="contact-header">
-                <div className="header-container">
-                    <h1 className="page-title">YI24: Organiser Contact</h1>
-                    
-                    <div className="contact-grid">
-                        <div className="contact-info">
-                            <h2 className="section-title">REACH US THROUGH</h2>
-                            
-                            <div className="contact-person">
-                                <h3 className="contact-role">
-                                    <User size={20} />
-                                    <span>Program Director</span>
-                                </h3>
-                                <p className="person-name">Sanjeeva Shivesh</p>
-                                <div className="contact-details">
-                                    <p>Email: info@youthideathon.in</p>
-                                    <p>Contact Number: 0124-4239588 | 8130596780</p>
-                                </div>
-                            </div>
-
-                            <div className="contact-person">
-                                <h3 className="contact-role">
-                                    <User size={20} />
-                                    <span>Org. Comm. Lead</span>
-                                </h3>
-                                <p className="person-name">Vandana Ahluwalia</p>
-                                <div className="contact-details">
-                                    <p>Email: vandana@thinkstartup.in</p>
-                                    <p>Contact Number: 8130062682 | 9873474756</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="contact-form">
-                            <h2 className="section-title">Send Us a Message</h2>
-                            <form onSubmit={handleSubmit}>
-                                <div className="form-group">
-                                    <label className="form-label">Your name</label>
-                                    <input
-                                        type="text"
-                                        className="form-input"
-                                        value={formData.name}
-                                        onChange={(e) => setFormData({...formData, name: e.target.value})}
-                                    />
-                                </div>
-                                <div className="form-group">
-                                    <label className="form-label">Your email</label>
-                                    <input
-                                        type="email"
-                                        className="form-input"
-                                        value={formData.email}
-                                        onChange={(e) => setFormData({...formData, email: e.target.value})}
-                                    />
-                                </div>
-                                <div className="form-group">
-                                    <label className="form-label">Your message (optional)</label>
-                                    <textarea
-                                        className="form-textarea"
-                                        value={formData.message}
-                                        onChange={(e) => setFormData({...formData, message: e.target.value})}
-                                    />
-                                </div>
-                                <button type="submit" className="submit-button">
-                                    Submit
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </header>
-
-            <section className="faq-section">
-                <h2 className="faq-title">Frequently Asked Question:</h2>
-                <div className="faq-container">
-                    {faqData.map((faq) => (
-                        <div key={faq.id} className="faq-item">
-                            <button
-                                className={`faq-question ${activeQuestion === faq.id ? 'active' : ''}`}
-                                onClick={() => setActiveQuestion(activeQuestion === faq.id ? null : faq.id)}
-                            >
-                                <span className="question-text">{faq.question}</span>
-                                {activeQuestion === faq.id ? <ChevronUp /> : <ChevronDown />}
-                            </button>
-                            {activeQuestion === faq.id && (
-                                <div className="faq-answer">
-                                    {faq.answer}
-                                </div>
-                            )}
-                        </div>
-                    ))}
-                </div>
-            </section>
+  return (
+    <div className="contact-page">
+      <div className="contact-header">
+        <div className="contact-header-overlay"></div>
+        <div className="contact-header-content">
+          <h1 className="contact-title">Contact Us</h1>
+          <p className="contact-description">Have questions about the event? We're here to help! Reach out to us through any of the channels below.</p>
         </div>
-    );
+      </div>
+      <div className="contact-container">
+        <div className="contact-info-grid">
+          <div className="contact-info-card">
+            <Mail className="info-icon" />
+            <h3>Email Us</h3>
+            <p>contact@paryavarnam.org</p>
+            <p>support@paryavarnam.org</p>
+          </div>
+
+          <div className="contact-info-card">
+            <Phone className="info-icon" />
+            <h3>Call Us</h3>
+            <p>+91 123 456 7890</p>
+            <p>+91 098 765 4321</p>
+          </div>
+
+          <div className="contact-info-card">
+            <Clock className="info-icon" />
+            <h3>Working Hours</h3>
+            <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+            <p>Saturday: 9:00 AM - 1:00 PM</p>
+          </div>
+        </div>
+
+        <div className="form-container">
+          <div className="contact-form-section">
+            <h2>Send Us a Message</h2>
+            <form onSubmit={handleSubmit} className="contact-form">
+              <div className="form-group">
+                <label htmlFor="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="subject">Subject</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows="4"
+                ></textarea>
+              </div>
+
+              <button type="submit" className="submit-btn" disabled={isSubmitting}>
+                {isSubmitting ? 'Sending...' : (
+                  <>
+                    Send Message
+                    <Send className="send-icon" />
+                  </>
+                )}
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
-export default Contact;
+export default ContactPage;

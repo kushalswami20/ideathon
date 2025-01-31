@@ -1,8 +1,12 @@
 import React from 'react';
 import './css/Registration.css';
 import { Loader2 } from 'lucide-react';
+import axios from 'axios';
+import { toast } from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 const RegistrationForm = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = React.useState({
     firstName: '',
     lastName: '',
@@ -14,7 +18,7 @@ const RegistrationForm = () => {
     zipCode: '',
     collegeName: '',
     collegeCity: '',
-    degree: '',
+    Degree: '',
     yearOfStudy: '',
     dateOfBirth: '',
     gender: ''
@@ -31,11 +35,24 @@ const RegistrationForm = () => {
     setLoading(true);
     
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      console.log('Form submitted:', formData);
+      const response = await axios.post('http://localhost:5001/user/register', formData, {
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        withCredentials: true
+      });
+
+      if (response.data.success) {
+        toast.success('Registration successful!');
+        navigate('/');  // Redirect to home page
+      } else {
+        toast.error(response.data.message || 'Registration failed');
+      }
     } catch (error) {
-      console.error('Submission error:', error);
+      console.error('Registration error:', error);
+      
+      const errorMessage = error.response?.data?.message || 'Registration failed. Please try again.';
+      toast.error(errorMessage);
     } finally {
       setLoading(false);
     }
@@ -194,12 +211,12 @@ const RegistrationForm = () => {
               <div className="form-group">
                 <label htmlFor="degree">Degree</label>
                 <input
-                  id="degree"
-                  name="degree"
+                  id="Degree"
+                  name="Degree"
                   type="text"
-                  value={formData.degree}
+                  value={formData.Degree}
                   onChange={handleChange}
-                  placeholder="Enter degree"
+                  placeholder="Enter Degree"
                   required
                 />
               </div>

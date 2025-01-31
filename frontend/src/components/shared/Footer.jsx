@@ -74,7 +74,7 @@ const Footer = () => {
                         </p>
                         <p className="hover:text-emerald-300">
                             <Phone size={16} />
-                            <span>(555) 123-4567</span>
+                            <span>+91 85953 45252</span>
                         </p>
                     </div>
                 </div>

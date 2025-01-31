@@ -1,16 +1,21 @@
 import React, { useState } from 'react';
 import { Send, Mail, Phone, Clock } from 'lucide-react';
-import './css/Contact.css';
+import './css/Contact.css'
+import axios from 'axios';
+import { toast } from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
+
 
 const ContactPage = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
+    phone: '',
     message: ''
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const [loading, setLoading] = React.useState(false);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -21,25 +26,37 @@ const ContactPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    setLoading(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    try{
+      const response = await axios.post('http://localhost:5001/user/contact', formData,{
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        withCredentials: true
+      });
+
+      if (response.data.success) {
+        toast.success('Contact successful!');
+        navigate('/');  // Redirect to home page
+      } else {
+        toast.error(response.data.message || 'Contact failed');
+      }
+    } catch (error) {
+      console.error('Contact error:', error);
+      const errorMessage = error.response?.data?.message || 'Contact failed. Please try again.';
+      toast.error(errorMessage);
+    }finally {
+      setLoading(false);
+    }
     
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
-    setIsSubmitting(false);
-    alert('Message sent successfully!');
+    
   };
 
   return (
     <div className="contact-page">
       <div className="contact-header">
+      <div className="gallery-header-background"></div>
         <div className="contact-header-overlay"></div>
         <div className="contact-header-content">
           <h1 className="contact-title">Contact Us</h1>
@@ -99,12 +116,12 @@ const ContactPage = () => {
               </div>
 
               <div className="form-group">
-                <label htmlFor="subject">Subject</label>
+                <label htmlFor="subject">phone</label>
                 <input
                   type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
                   onChange={handleChange}
                   required
                 />
@@ -122,8 +139,8 @@ const ContactPage = () => {
                 ></textarea>
               </div>
 
-              <button type="submit" className="submit-btn" disabled={isSubmitting}>
-                {isSubmitting ? 'Sending...' : (
+              <button type="submit" className="submit-btn" disabled={loading}>
+                {loading ? 'Sending...' : (
                   <>
                     Send Message
                     <Send className="send-icon" />

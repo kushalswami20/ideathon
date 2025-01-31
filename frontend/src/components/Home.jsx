@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Calendar } from 'lucide-react';
 import Poster from "../assets/Paryavarnam.jpeg";
-import VirinaHome from "../assets/Paryavarnam.jpeg";
+import VirinaHome from "../assets/photo.jpeg";
 import "./css/Home.css"
 
 const Home = () => {
@@ -41,15 +41,25 @@ const Home = () => {
             <div className="about-content">
               <h2>About Paryavarnam</h2>
               <p>
-                The Virina Foundation is dedicated to empowering women by focusing on health, 
-                awareness/education, and employment. Our impactful initiatives have reached 
-                thousands of women, making significant strides in areas such as menstrual 
-                hygiene promotion, skill development, and comprehensive health initiatives.
+              Welcome to Paryavarnam Society at DTU's Environmental Engineering
+Department. Committed to environmental stewardship, innovation,
+and sustainability, we catalyze collaboration, education, and action.
+Our society unites students and faculty with a common goal:
+addressing environmental challenges through practical solutions.
+Diverse activities and initiatives drive our commitment to
+interdisciplinary approaches. Join our vibrant community dedicated to
+making a positive impact
               </p>
               <p>
-                Through our continued efforts, we strive to create a world where every woman 
-                can realize her full potential and lead a life of dignity and independence. 
-                Join us in our mission to transform lives and make a difference.
+              We equip students for environmental
+engineering careers through
+foundational principles, fostering an
+inclusive environment, and driving
+innovations to address diverse
+environmental challenges. Our goal is
+to be a recognized leader in creating
+knowledge and innovative solutions
+for environmental engineering
               </p>
             </div>
             <div className="about-image">
@@ -68,19 +78,17 @@ const Home = () => {
           <h2 className="sec-title">Upcoming Events</h2>
           <div className="home-events-grid">
             <div className="events-info">
-              <h3>Cancer Awareness and Women's Health Initiative 2024</h3>
+              <h3>Pich-a-thon 2025</h3>
               <p>
-                Join us for our flagship two-day event focused on cancer prevention, 
-                early diagnosis, and women's health education. Features expert speakers,
-                health checkups, and interactive workshops.
+              A "Pitch-a-Thon" is an event where individuals or teams present their innovative ideas or projects to a panel of judges, typically comprising industry experts, investors, or executives. These events are designed to provide a platform for creators, entrepreneurs, and professionals to showcase their concepts, receive feedback, and potentially secure funding or support to bring their ideas to fruition.
               </p>
               <div className="stats-container">
                 <div className="stat-card">
-                  <h4>March 15-16</h4>
+                  <h4>Febraury 14, 2025</h4>
                   <p>Event Dates</p>
                 </div>
                 <div className="stat-card">
-                  <h4>300+</h4>
+                  <h4>200+</h4>
                   <p>Expected Attendees</p>
                 </div>
               </div>
@@ -89,23 +97,28 @@ const Home = () => {
             <div className="features-grid">
               {[
                 { 
+                  title: "Pich-a-thon", 
+                  date: "Febraury 14, 2025",
+                  desc: "A Better Idea " 
+                },
+                { 
                   title: "Health Camp", 
-                  date: "April 5, 2024",
+                  date: "April 5, 2025",
                   desc: "Free health checkups and consultations" 
                 },
                 { 
                   title: "Awareness Workshop", 
-                  date: "April 20, 2024",
+                  date: "April 20, 2025",
                   desc: "Interactive session on women's health" 
                 },
                 { 
                   title: "Community Drive", 
-                  date: "May 1, 2024",
+                  date: "May 1, 2025",
                   desc: "Distribution of health and hygiene kits" 
                 },
                 { 
                   title: "Medical Conference", 
-                  date: "May 15, 2024",
+                  date: "May 15, 2025",
                   desc: "Expert panel on women's healthcare" 
                 }
               ].map((event) => (

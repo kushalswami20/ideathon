@@ -12,6 +12,16 @@ const eventTypes = [
 
 const events = [
   {
+    id: 0,
+    title: "Pitch-a-thon",
+    type: "health",
+    date: "Febraury 14, 2025",
+    location: "DTU CCDR",
+    attendees: 150,
+    imageUrl: "/api/placeholder/400/300",
+    description: "A competition focusing on women's health and wellness."
+  },
+  {
     id: 1,
     title: "Women's Health Workshop",
     type: "health",
@@ -128,6 +138,7 @@ const Gallery = () => {
     <div className="gallery-container">
       {/* Header */}
       <header className="gallery-header">
+      <div className="gallery-header-background"></div>
         <div className="gallery-header-overlay" />
         <div className="gallery-header-content">
           <h1 className="gallery-title">Event Gallery</h1>

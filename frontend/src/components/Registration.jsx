@@ -35,7 +35,7 @@ const RegistrationForm = () => {
     setLoading(true);
     
     try {
-      const response = await axios.post('http://localhost:5001/user/register', formData, {
+      const response = await axios.post('https://paryavarnam.onrender.com/user/register', formData, {
         headers: {
           'Content-Type': 'application/json'
         },

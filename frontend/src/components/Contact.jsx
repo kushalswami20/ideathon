@@ -29,7 +29,7 @@ const ContactPage = () => {
     setLoading(true);
     
     try{
-      const response = await axios.post('http://localhost:5001/user/contact', formData,{
+      const response = await axios.post('https://paryavarnam.onrender.com/user/contact', formData,{
         headers: {
           'Content-Type': 'application/json'
         },

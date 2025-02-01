@@ -2,7 +2,7 @@ import React from 'react';
 import './css/Team.css'
 import Navneet from "../assets/Navneet.jpeg"
 import Nitesh from "../assets/Nitesh.jpeg"
-import Ashwini from "../assets/Ashwini.jpeg"
+import Ashwini from "../assets/ashwini.jpeg"
 import name1 from "../assets/name1.jpeg"
 import kshitij from "../assets/kshitij.jpeg"
 import vikash from "../assets/vikash.jpeg"

@@ -2,6 +2,7 @@ import React from 'react';
 import './css/Resources.css'
 import pdf2021 from "../assets/Paryavarnam2021.pdf"
 import pdf2022 from "../assets/Paryavaranam2022.pdf"
+import annualreport24 from "../assets/annualreport2024.pdf"
 
 const Resources = () => {
     return (
@@ -56,8 +57,8 @@ const Resources = () => {
                                 <i className="fas fa-tools"></i>
                             </div>
                             <h3>Annual Report 2024</h3>
-                            <p>Access to premium development tools and environments, including cloud credits and API keys.</p>
-                            <a href="#" className="resource-link">Get Access →</a>
+                            <p>Access to Annual Report 2024 of Paryavarnam.</p>
+                            <a href={annualreport24} className="resource-link">Get Access →</a>
                         </div>
 
                         {/* <div className="resource-card">

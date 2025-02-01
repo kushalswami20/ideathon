@@ -1,6 +1,6 @@
 import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
-import viteLogo from '/Users/kushalarogyaswami/Documents/ideathon-1/frontend/src/assets/Logo.jpeg'
+// import viteLogo from '/Users/kushalarogyaswami/Documents/ideathon-1/frontend/src/assets/Logo.jpeg'
 //dont use app.css
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from "./components/shared/Header"

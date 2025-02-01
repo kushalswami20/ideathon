@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { Search, Calendar, MapPin, Users } from 'lucide-react';
 import './css/Gallery.css';
+import IDH from "../assets/Event1.jpg"
+import event5 from "../assets/Event5.jpg"
+import event2 from "../assets/event2.jpg"
+import team from "../assets/Team.jpeg"
+import event3 from "../assets/event3.jpg"
 
 const eventTypes = [
   { id: 'all', label: 'All Events' },
@@ -13,53 +18,53 @@ const eventTypes = [
 const events = [
   {
     id: 0,
-    title: "Pitch-a-thon",
+    title: "International Day of Happiness",
     type: "health",
-    date: "Febraury 14, 2025",
-    location: "DTU CCDR",
-    attendees: 150,
-    imageUrl: "/api/placeholder/400/300",
+    date: "March 20, 2024",
+    location: "Pragyan Hall",
+    attendees: 50,
+    imageUrl: IDH,
     description: "A competition focusing on women's health and wellness."
   },
   {
     id: 1,
-    title: "Women's Health Workshop",
+    title: "Outdoor Trip",
     type: "health",
-    date: "March 15, 2024",
-    location: "City Hospital",
-    attendees: 150,
-    imageUrl: "/api/placeholder/400/300",
-    description: "A comprehensive workshop focusing on women's health and wellness."
+    date: "April 15, 2024",
+    location: "Yamuna Biodiversity Park",
+    attendees: 50,
+    imageUrl: event2,
+    description: "Adventure awaits—step outside and explore the unknown!"
   },
   {
     id: 2,
-    title: "Cancer Awareness Drive",
+    title: "Photography Event",
     type: "awareness",
-    date: "March 20, 2024",
-    location: "Community Center",
-    attendees: 200,
-    imageUrl: "/api/placeholder/400/300",
-    description: "Raising awareness about cancer prevention and early detection."
+    date: "January 21, 2024",
+    location: "GIS Lab,DTU",
+    attendees: 100,
+    imageUrl: event3,
+    description: "Capture moments, frame memories—join the photography event!"
   },
   {
     id: 3,
-    title: "Community Health Fair",
+    title: "Poster Competition",
     type: "community",
-    date: "April 5, 2024",
-    location: "Central Park",
-    attendees: 300,
-    imageUrl: "/api/placeholder/400/300",
+    date: "Febraury 5, 2024",
+    location: "BR Auditorium,DTU",
+    attendees: 200,
+    imageUrl: team,
     description: "Annual health fair bringing healthcare services to the community."
   },
   {
     id: 4,
-    title: "Mental Health Workshop",
+    title: "WetLand Visit",
     type: "workshop",
-    date: "April 15, 2024",
-    location: "Mind & Wellness Center",
+    date: "March 21, 2024",
+    location: "Yamuna Biodiversity Park",
     attendees: 100,
-    imageUrl: "/api/placeholder/400/300",
-    description: "Interactive session on mental health awareness and well-being."
+    imageUrl: event5,
+    description: "Interactive session on Environmental awareness and well-being."
   }
 ];
 

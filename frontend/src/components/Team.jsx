@@ -1,37 +1,42 @@
 import React from 'react';
 import './css/Team.css'
-
+import Navneet from "../assets/Navneet.jpeg"
+import Nitesh from "../assets/Nitesh.jpeg"
+import Ashwini from "../assets/Ashwini.jpeg"
+import name1 from "../assets/name1.jpeg"
+import kshitij from "../assets/kshitij.jpeg"
+import vikash from "../assets/vikash.jpeg"
 const Team = () => {
     const teamMembers = [
         {
-            name: "Col. Anil K Pokhriyal",
-            role: "CEO, MEPSC",
-            image: "/api/placeholder/200/200"
+            name: "Navneet Singh",
+            role: "President",
+            image: Navneet
         },
         {
-            name: "Shivani Kapoor",
-            role: "Founder, ThinkStartup",
-            image: "/api/placeholder/200/200"
+            name: "Nitesh Jha",
+            role: "Vice President",
+            image: Nitesh
         },
         {
-            name: "Sanjeeva Shivesh",
-            role: "Program Director, YouthIdeathon",
-            image: "/api/placeholder/200/200"
+            name: "Ashwini Kumar",
+            role: "Coordinator",
+            image: Ashwini
         },
         {
-            name: "Santosh Saha",
-            role: "Head (BD), MEPSC",
-            image: "/api/placeholder/200/200"
+            name: "Pratyush",
+            role: "Vice President",
+            image: name1
         },
         {
-            name: "Ruby Sinha",
-            role: "Media Partner",
-            image: "/api/placeholder/200/200"
+            name: "Kshitij Kumar Ojha",
+            role: "Treasurer",
+            image: kshitij
         },
         {
-            name: "Vandana Ahluwalia",
-            role: "Org. Comm. Lead, YouthIdeathon",
-            image: "/api/placeholder/200/200"
+            name: "vikas",
+            role: "Director Of Research",
+            image: vikash
         }
     ];
 

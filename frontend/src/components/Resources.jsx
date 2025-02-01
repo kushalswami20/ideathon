@@ -1,5 +1,7 @@
 import React from 'react';
 import './css/Resources.css'
+import pdf2021 from "../assets/Paryavarnam2021.pdf"
+import pdf2022 from "../assets/Paryavaranam2022.pdf"
 
 const Resources = () => {
     return (
@@ -15,50 +17,50 @@ const Resources = () => {
 
             <div className="container">
                 <section className="resources-section">
-                    <h2>Learning Materials</h2>
+                    <h2>Paryavarnam Magazines</h2>
                     <div className="resources-grid">
                         <div className="resource-card">
                             <div className="icon">
                                 <i className="fas fa-book"></i>
                             </div>
-                            <h3>Getting Started Guide</h3>
-                            <p>New to hackathons? Start here for a comprehensive introduction to ideation, prototyping, and presentation.</p>
-                            <a href="#" className="resource-link">Learn More →</a>
+                            <h3>Paryavarnam Magazine 2021 </h3>
+                            <p>Explore Paryavarnam Magazine 2021—Inspiring a sustainable future, one page at a time!</p>
+                            <a href={pdf2021} className="resource-link">Pdf Link →</a>
                         </div>
 
                         <div className="resource-card">
                             <div className="icon">
                                 <i className="fas fa-laptop-code"></i>
                             </div>
-                            <h3>Technical Workshops</h3>
-                            <p>Access recorded workshop sessions on web development, AI/ML, cloud computing, and more.</p>
-                            <a href="#" className="resource-link">Access Workshops →</a>
+                            <h3>Paryavarnam Magazine 2022</h3>
+                            <p>Explore Paryavarnam Magazine 2021—Inspiring a sustainable future, one page at a time!</p>
+                            <a href={pdf2022} className="resource-link">Pdf link →</a>
                         </div>
 
-                        <div className="resource-card">
+                        {/* <div className="resource-card">
                             <div className="icon">
                                 <i className="fas fa-trophy"></i>
                             </div>
                             <h3>Past Winners Showcase</h3>
                             <p>Learn from previous winning projects and understand what makes a great submission.</p>
                             <a href="#" className="resource-link">View Projects →</a>
-                        </div>
+                        </div> */}
                     </div>
                 </section>
 
                 <section className="resources-section">
-                    <h2>Tools & Software</h2>
+                    <h2>Research Papers</h2>
                     <div className="resources-grid">
                         <div className="resource-card">
                             <div className="icon">
                                 <i className="fas fa-tools"></i>
                             </div>
-                            <h3>Development Tools</h3>
+                            <h3>Annual Report 2024</h3>
                             <p>Access to premium development tools and environments, including cloud credits and API keys.</p>
                             <a href="#" className="resource-link">Get Access →</a>
                         </div>
 
-                        <div className="resource-card">
+                        {/* <div className="resource-card">
                             <div className="icon">
                                 <i className="fas fa-palette"></i>
                             </div>
@@ -74,11 +76,11 @@ const Resources = () => {
                             <h3>Software Downloads</h3>
                             <p>Curated list of recommended software and tools for different project types.</p>
                             <a href="#" className="resource-link">Download Now →</a>
-                        </div>
+                        </div> */}
                     </div>
                 </section>
 
-                <section className="resources-section">
+                {/* <section className="resources-section">
                     <h2>Templates & Guides</h2>
                     <div className="resources-grid">
                         <div className="resource-card">
@@ -108,7 +110,7 @@ const Resources = () => {
                             <a href="#" className="resource-link">Access Templates →</a>
                         </div>
                     </div>
-                </section>
+                </section> */}
 
                 <section className="contact-section">
                     <div className="contact-content">

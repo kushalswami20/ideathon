@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { Calendar } from 'lucide-react';
 import Poster from "../assets/Paryavarnam.jpeg";
 import VirinaHome from "../assets/photo.jpeg";
+import team from "../assets/Team.jpeg"
 import "./css/Home.css"
 
 const Home = () => {

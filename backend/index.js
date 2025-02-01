@@ -15,8 +15,8 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
 app.use(cors({
-    origin: 'http://localhost:5173','https://paryavarnam.vercel.app'  // Your frontend URL
-    credentials: true,  // This is important for handling cookies
+    origin: ['http://localhost:5173', 'https://paryavarnam.vercel.app'],  // Array of allowed origins
+    credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));

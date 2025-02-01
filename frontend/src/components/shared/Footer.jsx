@@ -34,10 +34,11 @@ const Footer = () => {
                 <div className="footer-section">
                     <h3>Connect With Us</h3>
                     <div className="social-links">
-                        <a 
+                        {/* <a 
                             href="#" 
                             aria-label="Facebook" 
-                            onClick={(e) => e.preventDefault()}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="social-link"
                         >
                             <Facebook size={20} />
@@ -45,23 +46,26 @@ const Footer = () => {
                         <a 
                             href="#" 
                             aria-label="Twitter" 
-                            onClick={(e) => e.preventDefault()}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="social-link"
                         >
                             <Twitter size={20} />
-                        </a>
+                        </a> */}
                         <a 
-                            href="#" 
-                            aria-label="LinkedIn" 
-                            onClick={(e) => e.preventDefault()}
+                            href="https://www.linkedin.com/company/paryavaranam/" 
+                            aria-label="LinkedIn"
+                            target="_blank"
+                            rel="noopener noreferrer" 
                             className="social-link"
                         >
                             <Linkedin size={20} />
                         </a>
                         <a 
-                            href="#" 
-                            aria-label="Instagram" 
-                            onClick={(e) => e.preventDefault()}
+                            href="https://www.instagram.com/paryavarnam_dtu?igsh=MW1icGUzYW9qd3JmZA==" 
+                            aria-label="Instagram"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="social-link"
                         >
                             <Instagram size={20} />

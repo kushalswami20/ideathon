@@ -3,7 +3,6 @@ import { useState } from 'react'
 // import viteLogo from '/Users/kushalarogyaswami/Documents/ideathon-1/frontend/src/assets/Logo.jpeg'
 //dont use app.css
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from "./components/shared/Header"
 import Footer from './components/shared/Footer'
 import Navbar from './components/shared/Navbar'
 import Home from './components/Home'
@@ -13,6 +12,7 @@ import Team from './components/Team'
 import Gallery from './components/Gallery'
 
 import Registration from './components/Registration'
+import ScrollToTop from './components/ScrollToTop';
 
 
 function App() {

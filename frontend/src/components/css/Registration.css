@@ -7,7 +7,7 @@
   /* Page layout */
   .registration-page {
     min-height: 100vh;
-    padding: 5rem 0;
+    padding: 5rem 0 3rem 0;
     background-color: var(--background-light);
     display: flex;
     justify-content: center;
@@ -106,7 +106,7 @@
   .submit-button {
     width: 100%;
     padding: 1rem;
-    background: var(--primary-light);
+    background: var(--primary-color);
     color: var(--text-light);
     border: none;
     border-radius: 6px;
@@ -121,7 +121,7 @@
   }
   
   .submit-button:hover:not(:disabled) {
-    background-color: var(--primary-color);
+    background-color: var(--primary-dark);
     transform: translateY(-1px);
   }
   
@@ -149,7 +149,7 @@
   /* Responsive adjustments */
   @media (max-width: 768px) {
     .registration-page {
-      padding: 5rem;
+      padding: 5rem 2rem 1rem;
     }
     
     .registration-card {

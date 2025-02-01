@@ -42,25 +42,25 @@ const Home = () => {
             <div className="about-content">
               <h2>About Paryavarnam</h2>
               <p>
-              Welcome to Paryavarnam Society at DTU's Environmental Engineering
-Department. Committed to environmental stewardship, innovation,
-and sustainability, we catalyze collaboration, education, and action.
-Our society unites students and faculty with a common goal:
-addressing environmental challenges through practical solutions.
-Diverse activities and initiatives drive our commitment to
-interdisciplinary approaches. Join our vibrant community dedicated to
-making a positive impact
+                Welcome to Paryavarnam Society at DTU's Environmental Engineering
+                Department. Committed to environmental stewardship, innovation,
+                and sustainability, we catalyze collaboration, education, and action.
+                Our society unites students and faculty with a common goal:
+                addressing environmental challenges through practical solutions.
+                Diverse activities and initiatives drive our commitment to
+                interdisciplinary approaches. Join our vibrant community dedicated to
+                making a positive impact
               </p>
               <p>
-              We equip students for environmental
-engineering careers through
-foundational principles, fostering an
-inclusive environment, and driving
-innovations to address diverse
-environmental challenges. Our goal is
-to be a recognized leader in creating
-knowledge and innovative solutions
-for environmental engineering
+                We equip students for environmental
+                engineering careers through
+                foundational principles, fostering an
+                inclusive environment, and driving
+                innovations to address diverse
+                environmental challenges. Our goal is
+                to be a recognized leader in creating
+                knowledge and innovative solutions
+                for environmental engineering
               </p>
             </div>
             <div className="about-image">
@@ -116,11 +116,6 @@ for environmental engineering
                   title: "Community Drive", 
                   date: "May 1, 2025",
                   desc: "Distribution of health and hygiene kits" 
-                },
-                { 
-                  title: "Medical Conference", 
-                  date: "May 15, 2025",
-                  desc: "Expert panel on women's healthcare" 
                 }
               ].map((event) => (
                 <div key={event.title} className="feature-card">

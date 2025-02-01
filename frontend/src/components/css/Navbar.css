@@ -62,6 +62,7 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  transition: all 0.3s ease;
 }
 
 .nav-link {
@@ -102,6 +103,11 @@
 
 .nav-link.active::after {
   width: 0;
+}
+
+.nav-link:focus {
+  outline: 2px solid #2e7d32;
+  outline-offset: 2px;
 }
 
 .mobile-menu-btn {
@@ -180,6 +186,10 @@
 
   .nav-link::after {
     display: none;
+  }
+
+  .nav-links, .hamburger, .logo, .leaf-icon {
+    transition: none;
   }
 }
 

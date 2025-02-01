@@ -91,6 +91,7 @@
   color: var(--text-dark);
   line-height: 1.8;
   margin-bottom: 1.5rem;
+  text-align: justify;
 }
 
 .rounded-image {
@@ -196,6 +197,10 @@
   color: var(--primary-color);
   font-weight: 500;
   margin-bottom: 0.5rem;
+}
+
+.events-info p{
+  text-align: justify;
 }
 
 /* Responsive Design */

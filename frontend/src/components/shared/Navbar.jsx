@@ -17,6 +17,15 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavClick = () => {
+    setIsOpen(false);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  };
+
   const navLinks = [
     { path: '/', label: 'Home' },
     { path: '/registration', label: 'Registration' },
@@ -30,18 +39,18 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
         <div className="nav-logo">
-          <Link to="/" className="logo-link">
+          <Link to="/" className="logo-link" onClick={handleNavClick}>
             <img src={Logo} alt="Logo" className="logo" />
-            <Leaf className="leaf-icon text-emerald-600" size={24} />
+            <Leaf className="leaf-icon text-green-700" size={24} />
           </Link>
         </div>
 
         <div className={`nav-links ${isOpen ? 'active' : ''}`}>
           {navLinks.map((link) => (
             <Link
-              key={link.label}
+              key={link.path}
               to={link.path}
-              onClick={() => setIsOpen(false)}
+              onClick={handleNavClick}
               className={`nav-link ${location.pathname === link.path ? 'active' : ''}`}
             >
               {link.label}

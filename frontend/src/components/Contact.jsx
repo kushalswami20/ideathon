@@ -56,7 +56,7 @@ const ContactPage = () => {
   return (
     <div className="contact-page">
       <div className="contact-header">
-      <div className="gallery-header-background"></div>
+      <div className="contact-header-background"></div>
         <div className="contact-header-overlay"></div>
         <div className="contact-header-content">
           <h1 className="contact-title">Contact Us</h1>

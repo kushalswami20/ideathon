@@ -85,11 +85,11 @@ const Home = () => {
               </p>
               <div className="stats-container">
                 <div className="stat-card">
-                  <h4>Febraury 14, 2025</h4>
+                  <h4>February 14, 2025</h4>
                   <p>Event Dates</p>
                 </div>
                 <div className="stat-card">
-                  <h4>200+</h4>
+                  <h4>100+</h4>
                   <p>Expected Attendees</p>
                 </div>
               </div>

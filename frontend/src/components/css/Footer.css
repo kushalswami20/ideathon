@@ -8,7 +8,7 @@
     overflow: hidden;
     background-size: 200% 200%;
     animation: gradientMove 15s ease infinite;
-    margin-top: auto;
+    margin-top: 3rem;
     min-height: 300px;
 }
 

@@ -19,52 +19,52 @@ const events = [
   {
     id: 0,
     title: "International Day of Happiness",
-    type: "health",
+    type: "awareness",
     date: "March 20, 2024",
     location: "Pragyan Hall",
     attendees: 50,
     imageUrl: IDH,
-    description: "A competition focusing on women's health and wellness."
+    description: "A celebration promoting mental well-being and happiness."
   },
   {
     id: 1,
     title: "Outdoor Trip",
-    type: "health",
+    type: "community",
     date: "April 15, 2024",
     location: "Yamuna Biodiversity Park",
     attendees: 50,
     imageUrl: event2,
-    description: "Adventure awaits—step outside and explore the unknown!"
+    description: "A nature excursion fostering community engagement and outdoor learning."
   },
   {
     id: 2,
     title: "Photography Event",
-    type: "awareness",
+    type: "workshop",
     date: "January 21, 2024",
-    location: "GIS Lab,DTU",
+    location: "GIS Lab, DTU",
     attendees: 100,
     imageUrl: event3,
-    description: "Capture moments, frame memories—join the photography event!"
+    description: "A hands-on photography workshop to enhance visual storytelling skills."
   },
   {
     id: 3,
     title: "Poster Competition",
-    type: "community",
-    date: "Febraury 5, 2024",
-    location: "BR Auditorium,DTU",
+    type: "awareness",
+    date: "February 5, 2024",
+    location: "BR Auditorium, DTU",
     attendees: 200,
     imageUrl: team,
-    description: "Annual health fair bringing healthcare services to the community."
+    description: "A creative competition to raise awareness on social and environmental issues."
   },
   {
     id: 4,
-    title: "WetLand Visit",
-    type: "workshop",
+    title: "Wetland Visit",
+    type: "awareness",
     date: "March 21, 2024",
     location: "Yamuna Biodiversity Park",
     attendees: 100,
     imageUrl: event5,
-    description: "Interactive session on Environmental awareness and well-being."
+    description: "An educational visit highlighting the importance of wetland conservation."
   }
 ];
 

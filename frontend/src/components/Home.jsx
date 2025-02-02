@@ -99,23 +99,23 @@ const Home = () => {
               {[
                 { 
                   title: "Pich-a-thon", 
-                  date: "Febraury 14, 2025",
-                  desc: "A Better Idea " 
+                  date: "February 14, 2025",
+                  desc: "A platform to showcase and pitch innovative ideas" 
                 },
                 { 
-                  title: "Health Camp", 
+                  title: "Plantation Drive", 
                   date: "April 5, 2025",
-                  desc: "Free health checkups and consultations" 
+                  desc: "A tree-planting initiative promoting environmental sustainability" 
                 },
                 { 
-                  title: "Awareness Workshop", 
+                  title: "Webinar", 
                   date: "April 20, 2025",
-                  desc: "Interactive session on women's health" 
+                  desc: "An interactive session on web development trends and technologies" 
                 },
                 { 
-                  title: "Community Drive", 
+                  title: "Hackathon", 
                   date: "May 1, 2025",
-                  desc: "Distribution of health and hygiene kits" 
+                  desc: "A coding competition fostering problem-solving and innovation"
                 }
               ].map((event) => (
                 <div key={event.title} className="feature-card">
